@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=VT323&display=swap');
+
+.container{
+    width: 18%;
+    height: auto;
+    background-color:#08313A;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 8px;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #1A5653;
+    color: #5CD85A;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.imagen{
+    width: 100%;
+    border-top-left-radius: 20px;
+}
+
+.nombre{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding:5px;
+    background-color: #1A5653 ;
+    color:#5CD85A;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'DotGothic16', sans-serif;
+    border-top-right-radius: 10px;
+}
+
+.statusContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+    border-top: 1px solid;
+}
+
+.texto{
+    font-family: 'VT323', monospace;
+    color:#5CD85A;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.span{
+    text-decoration: underline;
+}
+
+.genderContainer{
+    width: 1005;
+    height: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.button:hover{
+    background-color: #5CD85A;
+    color:#1A5653;
+}
+
