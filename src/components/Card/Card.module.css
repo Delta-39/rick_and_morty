@@ -52,6 +52,7 @@
     font-size: 20px;
     font-family: 'DotGothic16', sans-serif;
     border-top-right-radius: 10px;
+    transition: .3s;
 }
 
 .statusContainer{
@@ -84,6 +85,10 @@
     align-items: center;
 }
 
+.nombre:hover{
+    background-color:#5CD85A ;
+    color: #1A5653
+}
 .button:hover{
     background-color: #5CD85A;
     color:#1A5653;

@@ -1,0 +1,32 @@
+.container{
+    width: 70%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button{
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #1A5653;
+    color: #5CD85A;
+    padding: 10px;
+    margin-left: 10px;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.input{
+    background-color: #1A5653;
+    color: #5CD85A;
+    border: none;
+    height: 100%;
+    width: 60%;
+    padding: 10px;
+}
+
+.button:hover{
+    background-color: #5CD85A;
+    color:#1A5653;
+}

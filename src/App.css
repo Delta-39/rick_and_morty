@@ -1,8 +1,5 @@
 .App {
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-   width: 100vw;
    height: 100vh;
    background: url('./img/background.jpg');
+   background-size: cover;
 }

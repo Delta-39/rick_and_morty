@@ -1,0 +1,46 @@
+.detailContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.imageContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen{
+    border-radius: 350px;   
+    width: 60%;
+    height: auto;
+}
+
+.propertiesContainer{
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(26, 86, 83, 0.6);
+}
+
+.title{
+    font-family: 'VT323', monospace;
+    color:#5CD85A;
+    font-size: 6em;
+    margin-bottom: 80px;
+}
+
+.row{
+    display: flex;
+}
+
+.propertiesContainer p{
+    font-family: 'VT323', monospace;
+    color:#5CD85A;
+    font-size: 3em;
+}

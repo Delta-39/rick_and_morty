@@ -1,33 +1,31 @@
-.container{
+.container {
+    height: 60px;
+    position: fixed;
     width: 100%;
-    height: 40px;
-    padding: 10px 0 ;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    flex-direction: row-reverse;
     align-items: center;
     background-color: black;
+    margin-bottom: 60px;
+}
+
+.buttonsContainer{
+    padding-left: 0px;
 }
 
 .button{
     font-family: 'VT323', monospace;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
     background-color: #1A5653;
     color: #5CD85A;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 90px;
     transition: .2s ease;
     cursor: pointer;
-}
-
-.input{
-    background-color: #1A5653;
-    color: #5CD85A;
-    border: none;
-    height: 100%;
-    width: 30%;
-    padding: 10px;
-
 }
 
 .button:hover{
