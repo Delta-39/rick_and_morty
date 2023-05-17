@@ -3,6 +3,7 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav';
 import About from './views/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx'
+import Error404 from './views/Error404/Error404';
 import { useState } from 'react';
 import axios from 'axios';
 import {Routes, Route} from 'react-router-dom';
@@ -30,9 +31,10 @@ function App() {
       <div className='App'>
          <Nav onSearch={onSearch} onClose={onClose} />
          <Routes>
-            <Route path='/home' element={<Cards onClose={onClose} characters={characters}/>}/>
-            <Route path='/about' element={<About/>} />
-            <Route path='/detail/:id' element={<Detail/>} />
+            <Route exact path='/home' element={<Cards onClose={onClose} characters={characters}/>}/>
+            <Route exact path='/about' element={<About/>} />
+            <Route exact path='/detail/:id' element={<Detail/>} />
+            <Route path='*' element={<Error404 />} />
          </Routes>
       </div>
    );
