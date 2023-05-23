@@ -1,7 +1,8 @@
 .container{
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
-    background: url('../../img/photo-1520034475321-cbe63696469a.jpg');
+    background: url('../../img/pexels-francesco-ungaro-998641\ \(1\).jpg');
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,6 +46,7 @@
     transition: .3s;
     cursor: pointer;
     margin-top: 20px;
+    border: none;
 }
 
 .button:hover{
@@ -52,12 +54,13 @@
     background-color: #5CD85A ;
 }
 
+
 @keyframes arribaAbajo {
-    /* Definimos la animación */
+    
     0% {
-      top: 0; /* Posición inicial de la imagen */
+        top: 0; 
     }
     100% {
-      top: 20px; /* Posición final de la imagen */
+        top: 20px; 
     }
 }

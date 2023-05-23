@@ -12,6 +12,7 @@
     background-color: #1A5653;
     color: #5CD85A;
     padding: 10px;
+    border: none;
     margin-left: 10px;
     transition: .2s ease;
     cursor: pointer;

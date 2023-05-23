@@ -4,9 +4,11 @@ import Nav from './components/Nav/Nav';
 import About from './views/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx'
 import Error404 from './views/Error404/Error404';
-import { useState } from 'react';
+import Form from './components/Form/Form'
+import {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+
 
 function App() {
    const [characters, setCharacters] = useState([])
@@ -22,15 +24,35 @@ function App() {
    }
 
    let onClose = (id) => {
-      let parseado = parseInt(id);
-      let filtrado = characters.filter((character) => character.id !== parseado)
-      setCharacters(filtrado)
+      let parseoId = parseInt(id);
+      let filtradoCharacters = characters.filter((character) => character.id !== parseoId)
+      setCharacters(filtradoCharacters)
    }
+
+
+   const navigate = useNavigate();
+   const [access, setAccess] = useState(false)
+   const email = ''
+   const password = ''
+
+   let login = (userData) =>{
+      if(userData.email === email && userData.password === password){
+         setAccess(true);
+         navigate('/home')
+      }
+}
+   useEffect(() => {
+      !access && navigate('/');
+   },[access]);
+
+   const location = useLocation();
+   const compararLocations = location.pathname !== '/'
 
    return (
       <div className='App'>
-         <Nav onSearch={onSearch} onClose={onClose} />
+         {compararLocations ? <Nav onSearch={onSearch} onClose={onClose}/> : '' }
          <Routes>
+            <Route exact path='/' element={<Form login={login} />} />
             <Route exact path='/home' element={<Cards onClose={onClose} characters={characters}/>}/>
             <Route exact path='/about' element={<About/>} />
             <Route exact path='/detail/:id' element={<Detail/>} />

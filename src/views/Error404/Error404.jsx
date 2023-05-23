@@ -11,7 +11,7 @@ export default function Error404(){
                 <h1>4</h1>
             </div>
             <p>wubba lubba dub dub!</p>
-            <p>the portal gun warped to an unknownuniverse.</p>
+            <p>The portal gun warped to an unknown universe.</p>
             <Link to='/home' >
                 <button className={styles.button}>Home</button>
             </Link>
