@@ -5,9 +5,10 @@ import About from './views/About/About.jsx';
 import Detail from './components/Detail/Detail.jsx'
 import Error404 from './views/Error404/Error404';
 import Form from './components/Form/Form'
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
+import Favorites from './components/Favorites/Favorites';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
       <div className='App'>
          {compararLocations ? <Nav onSearch={onSearch} onClose={onClose}/> : '' }
          <Routes>
+            <Route exact path='/favorites' element={<Favorites characters={characters} />}/>
             <Route exact path='/' element={<Form login={login} />} />
             <Route exact path='/home' element={<Cards onClose={onClose} characters={characters}/>}/>
             <Route exact path='/about' element={<About/>} />

@@ -1,6 +1,7 @@
 import styles from './Error404.module.css'
 import errorImage from '../../img/rick-and-morty-portal-shoes-white-clothing-zavvi-23.png'
 import {Link} from 'react-router-dom'
+import React from 'react'
 
 export default function Error404(){
     return(

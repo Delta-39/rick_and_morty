@@ -1,0 +1,26 @@
+.contenedorFavoritos{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contenedorFiltros{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #0d2b2a ;
+}
+
+.contenedorFiltros select{
+    width: 200px;
+    padding: 5px;
+    margin-left: 50px;
+    background-color: #1A5653;
+    color: #5CD85A;
+    font-family: 'VT323', monospace;
+    font-weight: 600;
+    font-size: 1.2em;
+}

@@ -1,7 +1,6 @@
-// import styles from './Form.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import {useState} from 'react'
+import React, {useState} from 'react'
 import {validation} from './validation.js'
 import styles from './Form.module.css'
 import imagen from '../../img/pngwing.com.png'
