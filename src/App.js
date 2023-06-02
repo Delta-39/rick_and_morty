@@ -12,12 +12,18 @@ import Favorites from './components/Favorites/Favorites';
 
 
 function App() {
-   const [characters, setCharacters] = useState([])
-   
+   const [characters, setCharacters] = useState([]);
+   const [displayedCharacterIds, setDisplayedCharacterIds] = useState([]);
+
    let onSearch = (id) => {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+            if (displayedCharacterIds.includes(data.id)) {
+               window.alert('¡Este personaje ya se muestra en pantalla!');
+            } else {
+               setCharacters((oldChars) => [...oldChars, data]);
+               setDisplayedCharacterIds((oldIds) => [...oldIds, data.id]);
+            }
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
@@ -28,6 +34,7 @@ function App() {
       let parseoId = parseInt(id);
       let filtradoCharacters = characters.filter((character) => character.id !== parseoId)
       setCharacters(filtradoCharacters)
+      setDisplayedCharacterIds(filtradoCharacters)
    }
 
 
@@ -51,7 +58,7 @@ function App() {
 
    return (
       <div className='App'>
-         {compararLocations ? <Nav onSearch={onSearch} onClose={onClose}/> : '' }
+         {compararLocations ? <Nav onSearch={onSearch} /> : '' }
          <Routes>
             <Route exact path='/favorites' element={<Favorites characters={characters} />}/>
             <Route exact path='/' element={<Form login={login} />} />

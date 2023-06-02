@@ -1,21 +1,28 @@
 .container {
-    height: 60px;
+    height: 80px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse;
     background-color: black;
+}
+
+.container img{
+    height: 120px;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .buttonsContainer{
     display: flex;
     height: 100%;
     align-items: center;
-    gap: 100px;
+    justify-content: space-evenly;
+    margin-right: 10px;
 }
 
-.button{
+.buttonNav{
     width: 80%;
     align-self: center;
     font-family: 'VT323', monospace;

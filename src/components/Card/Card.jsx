@@ -1,5 +1,5 @@
 import styles from './Card.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { addFav, removeFav } from "../../redux/actions"
 import { connect } from 'react-redux'
 import React, { useState, useEffect } from 'react'
@@ -23,11 +23,18 @@ export function Card(props) {
       });
    }, [myFavorites]);
 
+   const location = useLocation()
+   const compararLocationsDelete = location.pathname === '/favorites'
+
    return (
       <div className={styles.container}>
          <div className={styles.buttonContainer} >
             <img className={styles.imagen} src={image} alt='' />
-            <button className={styles.button} onClick={() => props.onClose(id)}>X</button>
+            { compararLocationsDelete ?(
+            <button className={styles.buttonBorrado} onClick={() => props.onClose(id)}>X</button>
+            ) : (
+            <button className={styles.button} onClick={() => props.onClose(id)}>X</button>)}
+      
             {isFav ? (
                <button className={styles.corazon} onClick={handleFavorite}>❤️</button>
             ) : (

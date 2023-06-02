@@ -1,9 +1,13 @@
 .contenedorFavoritos{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+
+.contenedorFavoritos :nth-child(n+6) {
+    margin-top: 20px; 
 }
 
 .contenedorFiltros{

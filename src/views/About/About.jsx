@@ -1,7 +1,7 @@
 import styles from './About.module.css'
 import React from 'react'
 import Typed from 'typed.js'
-import imagen from '../../img/gorickyourself.png'
+import imagen from '../../img/rickAbout.png'
 
 export default function About() {
     const el = React.useRef(null);
@@ -60,7 +60,9 @@ export default function About() {
                 </div>
             </div>
             <div className={styles.containerDerecha} >
-                <img src={imagen} alt='yo-version-rick-and-morty' />
+                <div className={styles.containerDerecha_imagen} >
+                    <img src={imagen} alt="pickle_rick" />
+                </div>
             </div>
         </div>
     )

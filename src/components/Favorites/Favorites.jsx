@@ -18,7 +18,7 @@ const Favorites = (props) => {
 
     let handleFilter = (e) =>{
         let valorFilter = e.target.value
-        dispatch(filterCards(valorFilter))
+        return valorFilter === 'gender' ? dispatch(filterCards('all')) : dispatch(filterCards(valorFilter))      
     }
 
     return (

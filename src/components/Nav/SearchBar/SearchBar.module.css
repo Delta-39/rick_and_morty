@@ -1,19 +1,48 @@
 .container{
-    width: 70%;
-    height: 40px;
     display: flex;
-    justify-content: flex-end;
+    height: auto;
+    justify-content: center;
+    margin: auto 0;
+    padding: 10px;
+    width: 380px;
 }
 
 .button{
+    height: 40px;
     font-family: 'VT323', monospace;
     font-size: 20px;
     font-weight: 700;
     background-color: #1A5653;
     color: #5CD85A;
     padding: 10px;
+    border: 1px solid #5CD85A;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.buttonRandom{
+    height: 40px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #1A5653;
+    color: #5CD85A;
     border: none;
-    margin-left: 10px;
+    padding: 10px 20px;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.buttonLogOut{
+    height: 40px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #1A5653;
+    color: #5CD85A;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 20px;
     transition: .2s ease;
     cursor: pointer;
 }
@@ -22,9 +51,15 @@
     background-color: #1A5653;
     color: #5CD85A;
     border: none;
-    height: 100%;
-    width: 60%;
+    outline: none;
+    height: 40px;
+    width: 50%;
     padding: 10px;
+}
+
+.buttonRandom:hover{
+    background-color: #5CD85A;
+    color: #1A5653;
 }
 
 .button:hover{
