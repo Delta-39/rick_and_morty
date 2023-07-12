@@ -16,11 +16,6 @@ function App() {
    const [displayedCharacterIds, setDisplayedCharacterIds] = useState([]);
 
    let onSearch = (id) => {
-      try {
-         
-      } catch (error) {
-         
-      }
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             if (displayedCharacterIds.includes(data.id)) {
@@ -37,23 +32,42 @@ function App() {
 
    let onClose = (id) => {
       let parseoId = parseInt(id);
-      let filtradoCharacters = characters.filter((character) => character.id !== parseoId)
-      setCharacters(filtradoCharacters)
-      setDisplayedCharacterIds(filtradoCharacters)
+      let filtradoCharacters = characters.filter((character) => character.id !== parseoId);
+      setCharacters(filtradoCharacters);
+      setDisplayedCharacterIds(filtradoCharacters);
    }
 
 
    const navigate = useNavigate();
    const [access, setAccess] = useState(false)
 
-   function login(userData) {
-      const { email, password } = userData;
+   async function login(userData) {
+      const {
+         email,
+         password
+      } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
+      try {
+         const response = await axios.get(URL, {
+            params: {
+               email: email,
+               password: password
+            }
+         });
+
+         const {
+            data
+         } = response;
+         const {
+            access
+         } = data;
          setAccess(data);
-         access && navigate('/home');
-      });
+         if (access) {
+            navigate('/home');
+         }
+      } catch (error) {
+         console.error(error);
+      }
    }
 
    useEffect(() => {
@@ -68,7 +82,7 @@ function App() {
          {compararLocations ? <Nav onSearch={onSearch} /> : '' }
          <Routes>
             <Route exact path='/favorites' element={<Favorites characters={characters} />}/>
-            <Route exact path='/' element={<Form login={login} />} />
+            <Route path='/' element={<Form login={login} />} />
             <Route exact path='/home' element={<Cards onClose={onClose} characters={characters}/>}/>
             <Route exact path='/about' element={<About/>} />
             <Route exact path='/detail/:id' element={<Detail/>} />

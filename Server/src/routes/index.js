@@ -1,12 +1,19 @@
-const express = require('../index');
-const routerGeneral = express.Router() 
-const getCharById = require('../controllers/getCharById');
-const handleFavorites = require('../controllers/handleFavorites');
-const login = require('../controllers/login')
+// Importar los controladores
+const getCharById = require('../controllers/getCharById')
+const login = require('../controllers/logIn')
+const {postFav, deleteFav} = require('../controllers/handleFavorites')
 
-routerGeneral.get('/character/:id', getCharById)
-routerGeneral.get('/login', login)
-routerGeneral.post('/fav', handleFavorites.postFav)
-routerGeneral.delete('/fav/:id',handleFavorites.deleteFav)
+// Importar la función Router de express
+const { Router } = require('express');
 
-module.exports = routerGeneral
+// Crear una instancia de Router
+const router = Router();
+
+// Definir las rutas
+router.get('/character/:id', getCharById);
+router.get('/login', login);
+router.post('/fav', postFav);
+router.delete('/fav/:id', deleteFav);
+
+// Exportar el router
+module.exports = router;
